@@ -1,0 +1,128 @@
+{
+  "agents": {
+    "defaults": {
+      "workspace": "~/.nanobot/workspace",
+      "modelPreset": null,
+      "model": "qwen3-14b <- ИМЯ МОДЕЛИ VLLM", 
+      "provider": "vllm",
+      "maxTokens": 30000,
+      "contextWindowTokens": 65536,
+      "contextBlockLimit": null,
+      "temperature": 0.1,
+      "fallbackModels": [],
+      "maxToolIterations": 200,
+      "maxConcurrentSubagents": 1,
+      "maxToolResultChars": 16000,
+      "providerRetryMode": "standard",
+      "toolHintMaxLength": 40,
+      "reasoningEffort": null,
+      "timezone": "UTC",
+      "botName": "nanobot",
+      "botIcon": "🐈",
+      "unifiedSession": false,
+      "disabledSkills": [],
+      "idleCompactAfterMinutes": 0,
+      "maxMessages": 120,
+      "consolidationRatio": 0.5,
+      "dream": {
+        "intervalH": 2,
+        "modelOverride": null,
+        "maxBatchSize": 20,
+        "maxIterations": 15,
+        "annotateLineAges": true
+      }
+    }
+  },
+  "channels": {
+    "sendProgress": true,
+    "sendToolHints": false,
+    "showReasoning": true,
+    "sendMaxRetries": 3,
+    "transcriptionProvider": "groq",
+    "transcriptionLanguage": null,
+    "telegram": {
+      "enabled": false,
+      "token": "ДОБАВЬТЕ_ПОЛУЧЕННЫЙ_ТОКЕН_ТЕЛЕГРАМ_БОТА",
+      "allowFrom": [ДОБАВЬТЕ_СВОЕ_ИМЯ_ПОЛЬЗОВАТЕЛЯ_В_ТЕЛЕГРАМ],
+      "proxy": null,
+      "replyToMessage": false,
+      "reactEmoji": "👀",
+      "groupPolicy": "mention",
+      "connectionPoolSize": 32,
+      "poolTimeout": 5.0,
+      "streaming": true,
+      "inlineKeyboards": false,
+      "streamEditInterval": 0.6
+    }
+  },
+  "providers": {
+    "vllm": {
+      "apiKey": "КЛЮЧ_VLLM_ДЛЯ_МОДЕЛИ(ЕСЛИ_ИСПОЛЬЗУЕТСЯ)",
+      "apiBase": "АДРЕС_ПОРТ_ДЛЯ_ЗАПУЩЕННОЙ_МОДЕЛИ_VLLM_(Например http://192.168.100.12:8002/v1",
+      "extraHeaders": null,
+      "extraBody": null
+    }
+  },
+  "api": {
+    "host": "127.0.0.1",
+    "port": 8900,
+    "timeout": 120.0
+  },
+  "gateway": {
+    "host": "127.0.0.1",
+    "port": 18790,
+    "heartbeat": {
+      "enabled": true,
+      "intervalS": 1800,
+      "keepRecentMessages": 8
+    }
+  },
+  "tools": {
+    "web": {
+      "enable": true,
+      "proxy": null,
+      "userAgent": null,
+      "search": {
+        "provider": "duckduckgo",
+        "apiKey": "",
+        "baseUrl": "",
+        "maxResults": 5,
+        "timeout": 30
+      },
+      "fetch": {
+        "useJinaReader": true
+      }
+    },
+    "exec": {
+      "enable": true,
+      "timeout": 60,
+      "pathAppend": "",
+      "sandbox": "",
+      "allowedEnvKeys": [],
+      "allowPatterns": [],
+      "denyPatterns": []
+    },
+    "my": {
+      "enable": true,
+      "allowSet": false
+    },
+    "imageGeneration": {
+      "enabled": false,
+      "provider": "openrouter",
+      "model": "openai/gpt-5.4-image-2",
+      "defaultAspectRatio": "1:1",
+      "defaultImageSize": "1K",
+      "maxImagesPerTurn": 4,
+      "saveDir": "generated"
+    },
+    "restrictToWorkspace": false,
+    "mcpServers": {
+      "bidzaar": {
+        "command": "python",
+        "args": ["C:/tmp/mcp/bidzaar/bidzaar_mcp.py"]
+      }
+     },
+    "ssrfWhitelist": []
+  },
+  "model_presets": {}
+}
